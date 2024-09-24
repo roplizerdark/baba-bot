@@ -16,10 +16,10 @@ await conn.sendMessage(m.chat, { react: { text: '🐧', key: m.key } })
 await conn.sendMessage(m.chat, { react: { text: '🥺', key: m.key } })
    }
     if (/^مين عمك$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, `*عمي هو Mohamed Elsony طبعا 🫶🏻💗*`, m) //wm, null, [['Menu', '#menu']], m) botones :V
+     conn.reply(m.chat, `*عمي هو ويكا اخو وسكي طبعا 🫶🏻💗*`, m) //wm, null, [['Menu', '#menu']], m) botones :V
 }
     if (/^بوت$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, `*اسمي زينون ياورع 🐢*`, m) //wm, null, [['Menu', '#menu']], m) botones :V
+     conn.reply(m.chat, `*اسمي وسكي ياورع 🐢*`, m) //wm, null, [['Menu', '#menu']], m) botones :V
 await conn.sendMessage(m.chat, { react: { text: '🗿', key: m.key } })
 }
 
@@ -28,8 +28,8 @@ await conn.sendMessage(m.chat, { react: { text: '🗿', key: m.key } })
 await conn.sendMessage(m.chat, { react: { text: '🗿', key: m.key } })
  } 
 
-   if (/^زينون$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat,'*قلب زينون 🐢💗*',m) //wm, null, [['Menu', '#menu']], m) botones :v
+   if (/^وسكي $/i.test(m.text) ) { //sem prefixo 
+     conn.reply(m.chat,'*قلب وسكي 🐢💗*',m) //wm, null, [['Menu', '#menu']], m) botones :v
 await conn.sendMessage(m.chat, { react: { text: '💗', key: m.key } })
    }
 
@@ -130,7 +130,7 @@ await conn.sendMessage(m.chat, { react: { text: '💗', key: m.key } })
 
   
  if (/^كيفك|شخبارك|علوك|عامل ايه|اخبارك|اي الدنيا$/i.test(m.text) ) { //sem prefixo 
-    conn.reply(m.chat, `*الحمد لله و انت 🐧*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+    conn.reply(m.chat, `*احسن منك 🐧*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
 
  if (/^لاو ساما$/i.test(m.text) ) { //sem prefixo 
      conn.reply(m.chat, `*صديق لايت الروح بل الروح 🐧⚡*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 

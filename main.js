@@ -101,7 +101,7 @@ global.chatgpt.chain = lodash.chain(global.chatgpt.data);
 loadChatgptDB();
 
 global.creds = 'creds.json'
-global.authFile = 'ElsonyBotSession'
+global.authFile = 'GataBotSession'
 global.authFileJB  = 'GataJadiBot'
 global.rutaBot = join(__dirname, authFile)
 global.rutaJadiBot = join(__dirname, authFileJB)
@@ -118,11 +118,12 @@ let phoneNumber = global.botNumberCode
 const methodCodeQR = process.argv.includes("qr")
 const methodCode = !!phoneNumber || process.argv.includes("code")
 const MethodMobile = process.argv.includes("mobile")
-const rl = readline.createInterface({
+let rl = readline.createInterface({
 input: process.stdin,
 output: process.stdout,
 terminal: true,
 })
+
 const question = (texto) => {
 rl.clearLine(rl.input, 0)
 return new Promise((resolver) => {
@@ -131,6 +132,7 @@ rl.clearLine(rl.input, 0)
 resolver(respuesta.trim())
 })})
 }
+
 let opcion
 if (methodCodeQR) {
 opcion = '1'
@@ -180,7 +182,7 @@ const connectionOptions = {
 logger: pino({ level: 'silent' }),
 printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : false,
 mobile: MethodMobile, 
-browser: opcion == '1' ? ['GataBot-MD', 'Edge', '2.0.0'] : methodCodeQR ? ['GataBot-MD', 'Edge', '2.0.0'] : ['Ubuntu', 'Edge', '110.0.1587.56'],
+browser: opcion == '1' ? ['GataBot-MD', 'Edge', '20.0.04'] : methodCodeQR ? ['GataBot-MD', 'Edge', '20.0.04'] : ["Ubuntu", "Chrome", "20.0.04"],
 auth: {
 creds: state.creds,
 keys: makeCacheableSignalKeyStore(state.keys, Pino({ level: "fatal" }).child({ level: "fatal" })),
@@ -196,7 +198,7 @@ return msg?.message || ""
 msgRetryCounterCache, // Resolver mensajes en espera
 msgRetryCounterMap, // Determinar si se debe volver a intentar enviar un mensaje o no
 defaultQueryTimeoutMs: undefined,
-version,  
+version: [2, 2513, 1],
 }
 global.conn = makeWASocket(connectionOptions)
 if (!fs.existsSync(`./${authFile}/creds.json`)) {
@@ -280,11 +282,12 @@ process.on('uncaughtException', console.error);
 //process.on('uncaughtException', (err) => {
 //console.error('Se ha cerrado la conexión:\n', err)
 //process.send('reset') })
+
 /* ------------------------------------------------*/
 /* Código reconexión de sub-bots fases beta */
 /* Echo por: https://github.com/elrebelde21 */
 
-async function connectSubBots() {
+/*async function connectSubBots() {
 const subBotDirectory = './GataJadiBot';
 if (!existsSync(subBotDirectory)) {
 console.log('No se encontraron ningun sub-bots.');
@@ -305,7 +308,7 @@ console.log(chalk.bold.greenBright(`✅ TODOS LOS SUB-BOTS SE HAN INICIADO CORRE
 }
 (async () => {
 global.conns = [];
-const mainBotAuthFile = 'ElsonyBotSession';
+const mainBotAuthFile = 'GataBotSession';
 try {
 const mainBot = await connectionUpdate(mainBotAuthFile);
 global.conns.push(mainBot);
@@ -314,7 +317,7 @@ await connectSubBots();
 } catch (error) {
 console.error(chalk.bold.cyanBright(`❌ OCURRIÓ UN ERROR AL INICIAR EL BOT PRINCIPAL: `, error))
 }
-})();
+})();*/
 
 /* ------------------------------------------------*/
 
@@ -371,7 +374,8 @@ conn.ev.on('creds.update', conn.credsUpdate);
 isInit = false
 return true
 }
-const pluginFolder = global.__dirname(join(__dirname, './plugins/index'));
+
+/*const pluginFolder = global.__dirname(join(__dirname, './plugins/index'));
 const pluginFilter = (filename) => /\.js$/.test(filename);
 global.plugins = {};
 async function filesInit() {
@@ -384,7 +388,23 @@ global.plugins[filename] = module.default || module;
 conn.logger.error(e);
 delete global.plugins[filename];
 }}}
+filesInit().then((_) => Object.keys(global.plugins)).catch(console.error)*/
+
+const pluginFolder = global.__dirname(join(__dirname, './plugins/index'))
+const pluginFilter = (filename) => /\.js$/.test(filename)
+global.plugins = {}
+async function filesInit() {
+for (const filename of readdirSync(pluginFolder).filter(pluginFilter)) {
+try {
+const file = global.__filename(join(pluginFolder, filename))
+const module = await import(file)
+global.plugins[filename] = module.default || module
+} catch (e) {
+conn.logger.error(e)
+delete global.plugins[filename]
+}}}
 filesInit().then((_) => Object.keys(global.plugins)).catch(console.error)
+
 global.reload = async (_ev, filename) => {
 if (pluginFilter(filename)) {
 const dir = global.__filename(join(pluginFolder, filename), true)
@@ -445,13 +465,13 @@ unlinkSync(filePath)})
 }
 function purgeSession() {
 let prekey = []
-let directorio = readdirSync("./ElsonyBotSession")
+let directorio = readdirSync("./GataBotSession")
 let filesFolderPreKeys = directorio.filter(file => {
 return file.startsWith('pre-key-')
 })
 prekey = [...prekey, ...filesFolderPreKeys]
 filesFolderPreKeys.forEach(files => {
-unlinkSync(`./ElsonyBotSession/${files}`)
+unlinkSync(`./GataBotSession/${files}`)
 })
 } 
 function purgeSessionSB() {
@@ -477,7 +497,7 @@ console.log(chalk.bold.cyanBright(lenguajeGB.smspurgeSessionSB2()))
 console.log(chalk.bold.red(lenguajeGB.smspurgeSessionSB3() + err))
 }}
 function purgeOldFiles() {
-const directories = ['./ElsonyBotSession/', './GataJadiBot/']
+const directories = ['./GataBotSession/', './GataJadiBot/']
 directories.forEach(dir => {
 readdirSync(dir, (err, files) => {
 if (err) throw err

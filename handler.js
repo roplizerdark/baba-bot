@@ -48,7 +48,6 @@ if (!m)
 return
 m.exp = 0
 m.limit = false
-m.dollar = false
 m.money = false
 try {
 // TODO: use loop to insert data instead of this
@@ -62,7 +61,6 @@ if (typeof user !== 'object')
 global.db.data.users[m.sender] = {}
 if (user) {
 if (!isNumber(user.exp)) user.exp = 0
-if (!isNumber(user.dollar)) user.dollar = 0
 if (!('premium' in user)) user.premium = false
 if (!('muto' in user)) user.muto = false
 if (!isNumber(user.joincount)) user.joincount = 1
@@ -104,9 +102,9 @@ if (!isNumber(user.stroberi)) user.stroberi = 0
 }
 	              		    
 if (!isNumber(user.afk)) user.afk = -1
-if (!('autolevelup' in user))  user.autolevelup = true
+//if (!('autolevelup' in user))  user.autolevelup = true
 if (!isNumber(user.reporte)) user.reporte = 0
-//if (!('role' in user)) user.role = '*NOVATO(A)* 🪤'
+if (!('role' in user)) user.role = '*NOVATO(A)* 🪤'
 if (!isNumber(user.agility)) user.agility = 0
 if (!isNumber(user.anakanjing)) user.anakanjing = 0
 if (!isNumber(user.mesagge)) user.anakanjing = 0
@@ -616,7 +614,6 @@ dog: 0,
 dogexp: 0,
 doglastfeed: 0,
 dory: 0,
-dollar: 0,
 dragon: 0,
 dragonexp: 0,
 dragonlastfeed: 0,
@@ -1100,7 +1097,11 @@ if (opts['swonly'] && m.chat !== 'status@broadcast') return
 if (typeof m.text !== 'string')
 m.text = ''
 
-if (m.isBaileys) return
+//if (m.isBaileys) return 
+if (m.isBaileys || isBaileysFail && m?.sender === this?.this?.user?.jid) {
+return
+}
+	
 m.exp += Math.ceil(Math.random() * 10)
 let usedPrefix
 let _user = global.db.data && global.db.data.users && global.db.data.users[m.sender]
@@ -1473,7 +1474,7 @@ mentionedJid:[user],
 "title": [wm, '😻 𝗦𝘂𝗽𝗲𝗿 ' + gt + ' 😻', '🌟 centergatabot.gmail.com'].getRandom(),
 "containsAutoReply": true,
 "mediaType": 1, 
-sourceUrl: accountsgb ? accountsgb : 'https://github.com/GataNina-Li/GataBot-MD' }}}, { quoted: fkontak2 })
+sourceUrl: 'https://github.com/GataNina-Li/GataBot-MD' }}}, { quoted: fkontak2 })
 apii.data = ''
 //this.sendFile(id, apii.data, 'pp.jpg', text, null, false, { mentions: [user] }, { quoted: fkontak2 })
 }}}

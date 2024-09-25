@@ -31,11 +31,11 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `Elsony`}, body: { text: `
 ⎔⋅• ━ ╼╃ ⌬〔﷽〕⌬ ╄╾ ━ •⋅⎔
 > 〔قـسـم الدردشه المجهوله ˼‏ 👻 〕↶
-*⌬∙ • ──╾⊱﹝⚜️﹞⊰╼── • ∙⌬*
+*⌬∙ • ──╾⊱﹝🧚🏻‍♂️﹞⊰╼── • ∙⌬*
 > 👻 الدردشه المجهوله هي تقوم ب التحدث مع الاشخاص بسريه تامه لايظهر رقمك اثناء التحدث
 > 👻 اختر من الاسفل للبدأ
-*⌬∙ • ──╾⊱﹝⚜️﹞⊰╼── • ∙⌬*
-> © 𝑾𝒆𝒔𝒌𝒆-𝑩𝒐𝒕`,subtitle: "وسكي",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: وسكي } }, { upload: conn.waUploadToServer }, {quoted: m}))},nativeFlowMessage: { buttons: [
+*⌬∙ • ──╾⊱﹝🧚🏻‍♂️﹞⊰╼── • ∙⌬*
+> © 𝑾𝒆𝒔𝒌𝒆-𝑩𝒐𝒕`,subtitle: "Elsony",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: Elsony } }, { upload: conn.waUploadToServer }, {quoted: m}))},nativeFlowMessage: { buttons: [
 
 
                             {

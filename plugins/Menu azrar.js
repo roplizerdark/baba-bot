@@ -25,25 +25,25 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let taguser = '@' + m.sender.split("@s.whatsapp.net")[0];
   await conn.sendMessage(m.chat, { react: { text: '📂', key: m.key } })
-  const Elsony = 'https://telegra.ph/file/32329ff221ac7bbb7ab7b.jpg'
+  const Elsony = 'https://i.ibb.co/52H5GwS/file.jpg'
   const mentionId = m.key.participant || m.key.remoteJid;
  
 conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `gataVidMenu`}, body: { text: `*• ──╾⊱﹝⚜️﹞⊰╼── •*
 *مــرحــبــا بــك/ي* @${mentionId.split('@')[0]}
-╗──────¤مــعلـ🛖ـومــاتــك
+╗──────¤مــعلــومــاتــك
 > •مــســتــواك : ${level}
 > •بــريــمــيــوم : ${user.premiumTime > 0 ? 'مــمـ🔱ـيز' : (isPrems ? 'مــمـ🔱ـيز' : 'عــ🍁ــادي') || ''}
 > •رتــبــتــك : ${role}
 *• ──╾⊱﹝⚜️﹞⊰╼── •*
-╗───¤مــعلــومــات الــ🤖بــوت
-> •إســم الــبــوت: زينو🐢ن 
-> •الــمــطــور :Mohamed Elsony
+╗───¤مــعلــومــات الـبــوت
+> •إســم الــبــوت :وسكي
+> •الــمــطــور :♯ЅᗩFᏒOT꙯
 > •مــدة الــتــشــغــيل : ${uptime}
 *• ──╾⊱﹝⚜️﹞⊰╼── •*
 *~⌬ تــ✍︎ــوقــيــع ↡~*🖋️
-*⌞⚜️┊polite ス M.Z┊⚜️⌝*
+*⌞𝑾𝒆𝒔𝒌𝒆-𝑩𝒐𝒕⌝*
 *• ──╾⊱﹝⚜️﹞⊰╼── •*
-> Copyright © 2024 Elsony`,subtitle: "Elsony",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: Elsony } }, { upload: conn.waUploadToServer }, {quoted: m}))},
+> Copyright © `,subtitle: "Elsony",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: Elsony } }, { upload: conn.waUploadToServer }, {quoted: m}))},
                     contextInfo: {
                         mentionedJid: [m.sender],
                         isForwarded: false,
@@ -56,8 +56,8 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
                                     title: '⌈🛡╎الــقــوائـــم╎🛡⌋',
                                     sections: [
                                         {
-                                            title: 'مــرحـ🛡ـبــا بــك فـي مــ☑هــام زينون بـ🤖ـوت',
-                                            highlight_label: 'بعبص براحتك يابرو 🤖',
+                                            title: 'مــرحـ🛡ـبــا بــك فـي مــ☑هــام وسكي بـوت',
+                                            highlight_label: '𝑾𝒆𝒔𝒌𝒆-𝑩𝒐𝒕🧚🏻‍♂️',
                                             rows: [
                                                 {
                                                     header: 'الــقـ👑ـســم الـاول',
@@ -149,7 +149,7 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
                      },
                      {
                name: "cta_url",
-               buttonParamsJson: '{"display_text":"⌈📲╎قـنـاة الـمـطـور╎📲⌋","url":"https://chat.whatsapp.com/JsaqRUnNyXb0EuYG1sAxd3","merchant_url":"https://chat.whatsapp.com/JsaqRUnNyXb0EuYG1sAxd3"}'
+               buttonParamsJson: '{"display_text":"⌈📲╎جروبي╎📲⌋","url":"https://chat.whatsapp.com/F1iZPZB7AUB1X2iXTKJC5B","merchant_url":"https://chat.whatsapp.com/ClNQxTnKyFx6eZnJcvqsPY"}'
                             }
                         ]
                     }

@@ -25,23 +25,17 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let taguser = '@' + m.sender.split("@s.whatsapp.net")[0];
   await conn.sendMessage(m.chat, { react: { text: '🚀', key: m.key } })
-  const Elsony = 'https://telegra.ph/file/32329ff221ac7bbb7ab7b.jpg'
+  const Elsony = 'https://i.ibb.co/52H5GwS/file.jpg'
   const mentionId = m.key.participant || m.key.remoteJid;
  
 conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { header: { title: `Elsony`}, body: { text: `
 ⎔⋅• ━ ╼╃ ⌬〔﷽〕⌬ ╄╾ ━ •⋅⎔
-> Zenon↳🐢↲𝐁𝐎𝐓
 > 〔قـسـم الدردشه المجهوله ˼‏ 👻 〕↶
-*⌬∙ • ──╾⊱﹝⚜️﹞⊰╼── • ∙⌬*
-            *زينو🐢ن بــ🤖ــوت*
 *⌬∙ • ──╾⊱﹝⚜️﹞⊰╼── • ∙⌬*
 > 👻 الدردشه المجهوله هي تقوم ب التحدث مع الاشخاص بسريه تامه لايظهر رقمك اثناء التحدث
 > 👻 اختر من الاسفل للبدأ
 *⌬∙ • ──╾⊱﹝⚜️﹞⊰╼── • ∙⌬*
-*~⌬ تــ✍︎ــوقــيــع ↡~*🖋️
-*⌞⚜️┊Zenon ス M.E.Z┊⚜️⌝*
-*⌬∙ • ──╾⊱﹝⚜️﹞⊰╼── • ∙⌬*
-> Copyright © 2024 Elsony`,subtitle: "Elsony",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: Elsony } }, { upload: conn.waUploadToServer }, {quoted: m}))},nativeFlowMessage: { buttons: [
+> © 𝑾𝒆𝒔𝒌𝒆-𝑩𝒐𝒕`,subtitle: "وسكي",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: وسكي } }, { upload: conn.waUploadToServer }, {quoted: m}))},nativeFlowMessage: { buttons: [
 
 
                             {

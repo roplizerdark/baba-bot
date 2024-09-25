@@ -25,7 +25,6 @@ let more = String.fromCharCode(8206)
 let readMore = more.repeat(850)   
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
 let str = `⎔⋅• ━ ╼╃ ⌬〔﷽〕⌬ ╄╾ ━ •⋅⎔
-> Zenon↳🐢↲𝐁𝐎𝐓
 > 〔سكريبت بوت جاهز┊ ˼‏ 👨🏻‍💻˹ 〕↶ 
 *⌬∙ • ──╾⊱﹝⚜️﹞⊰╼── • ∙⌬*
            *نــاروتــ👑ــو بــ🤖ــوت*
@@ -107,7 +106,7 @@ https://chat.whatsapp.com/BrQVKh6Kt0X8LuMVWzW9XR
         conn.reply(m.chat, '[❗خطاء❗]', m)
     }
 }
-handler.command = /^(م10|الاسكربت)$/i
+handler.command = /^(م10|الاسكjjjjربت)$/i
 handler.exp = 20
 handler.fail = null
 export default handler

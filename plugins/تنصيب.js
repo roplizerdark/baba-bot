@@ -86,7 +86,7 @@ let handler = async (m, { conn: _conn, args, usedPrefix, command, isOwner }) => 
             setTimeout(async () => {
                 let codeBot = await conn.requestPairingCode(cleanedNumber);
                 codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot;
-                let txt = ` –  *𝙎𝙖𝙛𝙧𝙤𝙩-𝘽𝙤𝙩*\n\n`
+                let txt = ` –  *𝑾𝒆𝒔𝒌𝒆-𝑩𝒐𝒕*\n\n`
                     txt += `*┌  ✩  استخدم هذا الكود لتصبح بوت فرعي*\n`
                     txt += `*│  ✩  الخطوات:*\n`
                     txt += `*│  ✩  1 : اضغط على الثلاث نقاط*\n`

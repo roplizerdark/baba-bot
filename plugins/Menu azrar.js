@@ -39,11 +39,8 @@ conn.relayMessage(m.chat, { viewOnceMessage: { message: { interactiveMessage: { 
 > •إســم الــبــوت :وسكي
 > •الــمــطــور :♯ЅᗩFᏒOT꙯
 > •مــدة الــتــشــغــيل : ${uptime}
-*• ──╾⊱﹝⚜️﹞⊰╼── •*
-*~⌬ تــ✍︎ــوقــيــع ↡~*🖋️
-*⌞𝑾𝒆𝒔𝒌𝒆-𝑩𝒐𝒕⌝*
-*• ──╾⊱﹝⚜️﹞⊰╼── •*
-> Copyright © `,subtitle: "Elsony",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: Elsony } }, { upload: conn.waUploadToServer }, {quoted: m}))},
+*• ──╾⊱﹝🧚🏻‍♂️﹞⊰╼── •*
+> 𝑾𝒆𝒔𝒌𝒆-𝑩𝒐𝒕 `,subtitle: "Elsony",},header: { hasMediaAttachment: true,...(await prepareWAMessageMedia({ image : { url: Elsony } }, { upload: conn.waUploadToServer }, {quoted: m}))},
                     contextInfo: {
                         mentionedJid: [m.sender],
                         isForwarded: false,

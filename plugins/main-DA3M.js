@@ -1,17 +1,13 @@
 let handler = async m => m.reply(`
 
-≡  *Zenon↳🐢↲𝐁𝐎𝐓*
+≡  *𝑾𝒆𝒔𝒌𝒆-𝑩𝒐𝒕*
 
 _GROUP:_
 ─────────────
 ▢ انضم إلى مجموعة البوت *العامة والدعم*
-https://chat.whatsapp.com/H93YpO0LkJNHoTmtIhcL1z
+https://chat.whatsapp.com/F1iZPZB7AUB1X2iXTKJC5B
 
 ─────────────
-
-▢ *YouTube*
-• http://www.youtube.com/@Elsony_247
-
 
 `.trim())
 handler.help = ['gpguru']
